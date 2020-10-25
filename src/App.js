@@ -3,7 +3,7 @@ import {createUseStyles} from 'react-jss'
 import Input from './input';
 import Widget from './Widget'
 
-
+const key = process.env.REACT_APP_API_KEY  
 
 const styles = createUseStyles({
   bg : {
@@ -74,7 +74,7 @@ function App() {
 async function submitCity() {
   localStorage.setItem('city', city)
 
-  await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=445bff9b055f0d3a903ee2016766b598&units=metric`)
+  await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
   .then(response => {if (response.ok) return response.json();
     throw response;
   })
@@ -97,7 +97,7 @@ function removeCity() {
     if (localStorage.getItem('city') === null) { //check weather a city exist in local storage
       return null
     } else { //if the city does exist get the data
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=445bff9b055f0d3a903ee2016766b598&units=metric`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`)
         .then(response => {if (response.ok) return response.json();
           throw response; //if the response is ok throw
         })
