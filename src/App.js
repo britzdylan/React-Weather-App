@@ -115,7 +115,8 @@ if (data === null) { // if no city exists return the input
     </div>
   )
 }
-return ( //if the city exist render the weather widget
+//if the city exist render the weather widget
+return ( 
     <div style={{backgroundImage: `url('/bg/${bgImg}.svg')`}} className={classes.bg}>
       <Widget data={data} bgColour={bgColour} textColour={textColour} />
       <button className={classes.button} onClick={removeCity}>Change City</button> 
