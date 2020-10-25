@@ -69,7 +69,7 @@ function Widget(props) {
     console.log(data);
     return (
         <div className={classes.container} style={{ backgroundColor: `${bgColour}`, color: `${textColour}`}}>
-            <img className={classes.weatherIcon} alt="weather-conditions" src={`/icons/${data.weather[0].icon}@2x.png`} />
+            <img className={classes.weatherIcon} alt="weather-conditions" src={`./icons/${data.weather[0].icon}@2x.png`} />
             <h1 className={classes.temprature}>{data.main.temp}</h1>
             <small className={classes.city}>{data.name}</small>
             <div className={classes.midContainer}>
